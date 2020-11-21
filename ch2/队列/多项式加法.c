@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct PolyNode *Polynomial;
 
@@ -35,7 +36,7 @@ void Attach(int c, int e, Polynomial *p)
     node->expon = e;
     node->link = NULL;
 
-    // TODO: 要对 p 做修改
+    // 要对 p 做修改
     (*p)->link = node;
     *p = node;
 }
@@ -86,6 +87,7 @@ Polynomial PolyAdd(Polynomial p1, Polynomial p2)
     // 由于 p3 的首节点为空节点，真正的第一个多项式为 p4->link
     temp = p4;
     p4 = temp->link;
+    free(temp);
 
     // 返回 p3
     return p4;
