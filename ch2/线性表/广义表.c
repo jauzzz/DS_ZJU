@@ -12,4 +12,4 @@ struct GNode
     } URegion;
 
     GList Next;
-}
+};

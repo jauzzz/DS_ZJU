@@ -11,6 +11,9 @@
     5、ElementType DeleteQ( Queue Q )：将队头数据元素从队列中删除并返回。
 */
 
+#include <stdio.h>
+#include <stdlib.h>
+
 #define MAXSIZE 100
 
 typedef int ElementType;
@@ -73,4 +76,6 @@ ElementType DeleteQ(Queue Q)
 
     ele = Q->Data[Q->rear];
     Q->rear--;
+
+    return ele;
 }

@@ -6,6 +6,9 @@
     4、ElementType Pop(DStack S, int Tag)：删除并返回栈顶元素；
 */
 
+#include <stdlib.h>
+#include <stdio.h>
+
 #define MAXSIZE 100
 
 typedef int ElementType;
