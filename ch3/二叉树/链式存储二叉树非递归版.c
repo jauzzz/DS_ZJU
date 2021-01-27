@@ -186,7 +186,8 @@ void InOrderTraversal(BinTree BT)
 
 void PostOrderTraversal(BinTree BT)
 {
-    // TODO
+    // TODO:
+    ;
 }
 
 // 层次遍历，需要借助队列来实现
