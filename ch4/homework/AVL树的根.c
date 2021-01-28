@@ -1,22 +1,6 @@
-/*
-    平衡因子（Balance Factor）：一个节点左右子树的高度差，BF(T) = Hl - Hr
-
-    平衡二叉树（Balanced Binary Tree）(AVL Tree)：
-        - 空树
-        - 任一节点左右子树的高度差的绝对值不超过 1，即 |BF(T)| <= 1
-    
-    目的：让搜索树的高度尽量平衡，相差为 1 左右，以达到最好的查找效率
-
-    平衡只是一种特点，通常我们跟二叉搜索树一起使用，即平衡二叉搜索树;
-    平衡二叉搜索树操作集：
-    - CreatAVLTree    
-    - Insert（插入并保持平衡）
-    - Delete（删除并保持平衡）
-    - Find
-    - FindMin
-    - FindMax
-
-*/
+// https://pintia.cn/problem-sets/1302953266564911104/problems/1313023111009525761
+// 给定一个序列，返回该序列组成的 AVL 树的根
+// 主要就是 AVL 要做平衡操作会影响根的值
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -189,4 +173,32 @@ AVLTree RLRotation(AVLTree T)
 {
     T->Right = LLRotation(T->Right);
     return RRRotation(T);
+}
+
+// 主函数
+int main()
+{
+    int N, val;
+    AVLTree T;
+
+    // N: 序列的长度，L 要判断的序列个数
+    scanf("%d", &N);
+    if (N)
+    {
+        scanf("%d", &val);
+        // 建树
+        T = CreatAVLTree(val);
+        // 判断 L 个序列是否相同
+        for (int i = 0; i < N - 1; i++)
+        {
+            scanf("%d", &val);
+            T = Insert(val, T);
+        }
+
+        printf("%d\n", T->Data);
+    }
+    else
+        printf("0\n");
+
+    return 0;
 }

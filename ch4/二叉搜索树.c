@@ -51,10 +51,10 @@ Position FindMin(BinTree BST)
         return NULL;
 
     if (!BST->Left)
-        return BST->Data;
+        return BST;
     else
     {
-        FindMin(BST->Left);
+        return FindMin(BST->Left);
     }
 }
 
@@ -64,10 +64,10 @@ Position FindMax(BinTree BST)
         return NULL;
 
     if (!BST->Right)
-        return BST->Data;
+        return BST;
     else
     {
-        FindMax(BST->Right);
+        return FindMax(BST->Right);
     }
 }
 
